@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval Quiz Game: Comparatives & Superlatives</title>
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Pantalla de Ingreso del Nombre -->
+        <div id="login-container">
+            <h1>Welcome to the Lingua Legends</h1>
+            <p>Enter your name to begin:</p>
+            <form id="login-form" onsubmit="login(event)">
+                <label for="playerName">Your Name:</label>
+                <input type="text" id="playerName" required>
+                <br>
+                <button type="submit">Continue</button>
+            </form>
+            <p id="login-error" style="color: red; display: none;">Please enter a valid name.</p>
+        </div>
+
+        <!-- Pantalla de Introducción -->
+        <div id="intro-container" style="display: none;">
+            <h1>Comparatives and Superlatives - Level 1</h1>
+            <p>Welcome, <span id="playerDisplayName"></span>! In this game, you will learn about comparatives and superlatives. You need to score at least 20 points to pass this level!
+                <br><br>
+                <strong>Comparative:</strong> We use comparatives (e.g., "bigger", "faster") to compare two things.
+                <br><br>
+                <strong>Superlative:</strong> We use superlatives (e.g., "biggest", "fastest") to compare three or more things.
+                <br><br>
+                <strong>Comparatives:</strong> These are used to compare two elements. For example:
+                <ul>
+                    <li><strong>Tall</strong> → <strong>Taller</strong>: "John is taller than Mark."</li>
+                    <li><strong>Beautiful</strong> → <strong>More beautiful</strong>: "This painting is more beautiful than that one."</li>
+                </ul>
+                <strong>Superlatives:</strong> These indicate the highest degree among three or more elements. For example:
+                <ul>
+                    <li><strong>Tall</strong> → <strong>Tallest</strong>: "John is the tallest in his class."</li>
+                    <li><strong>Beautiful</strong> → <strong>The most beautiful</strong>: "This is the most beautiful garden I have ever seen."</li>
+                </ul>
+                <br>
+            </p>
+            <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <!-- Pantalla del Quiz -->
+        <div id="quiz-container" style="display: none;">
+            <h1 id="question">Question will go here</h1>
+            <div id="options"></div>
+            <p id="score">Score: 0</p>
+        </div>
+
+        <!-- Pantalla de fin del nivel -->
+        <div id="level-end-container" style="display: none;">
+            <h1 id="end-title">Level Completed!</h1>
+            <p id="end-message"></p>
+            <button id="next-level-btn" onclick="goToNextLevel()" style="display: none;">Next Level</button>
+            <button id="retry-btn" onclick="retryLevel()" style="display: none;">Retry Level</button>
+        </div>
+
+    </div>
+
+<div id="intro-container" style="display:none;">
+    <h2>Welcome, <span id="playerDisplayName"></span>!</h2>
+    <button onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<div id="quiz-container" style="display:none;">
+    <h3 id="question"></h3>
+    <div id="options"></div>
+    <div id="score">Score: 0</div>
+</div>
+
+<div id="level-end-container" style="display:none;">
+    <div id="end-message"></div>
+    <button id="next-level-btn" style="display:none;" onclick="goToNextLevel()">Next Level</button>
+    <button id="retry-btn" style="display:none;" onclick="retryLevel()">Retry Level</button>
+</div>
+<div id="level-intro-container" style="display:none;">
+    <h2>Level 2: Comparative and Superlative Adjectives</h2>
+    <p>In this level, we will test your knowledge of comparative and superlative adjectives in English. Remember that comparatives are used to compare two things, while superlatives are used to express the highest degree among three or more items.</p>
+    
+    <h3>Comparatives</h3>
+    <p>Comparatives are formed using "more" for adjectives with two or more syllables. For example:</p>
+    <ul>
+        <li><strong>difficult</strong> → <strong>more difficult</strong></li>
+        <li>Sentence: This test is <strong>more difficult</strong> than the last one.</li>
+    </ul>
+
+    <h3>Superlatives</h3>
+    <p>Superlatives are formed using "most" for adjectives with two or more syllables. For example:</p>
+    <ul>
+        <li><strong>beautiful</strong> → <strong>most beautiful</strong></li>
+        <li>Sentence: This is the <strong>most beautiful</strong> place I have ever seen.</li>
+    </ul>
+    
+    <button onclick="startLevelTwo()">Start Level 2</button>
+</div>
+
+
+
+    <script src="java.js"></script>
+</body>
+</html>
